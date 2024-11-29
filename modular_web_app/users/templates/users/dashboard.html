@@ -1,0 +1,8 @@
+{% extends "users/base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h1>Welcome, {{ request.user.username }}</h1>
+<p class="text-muted">This is your dashboard page. You can add more features here as needed.</p>
+{% endblock %}
