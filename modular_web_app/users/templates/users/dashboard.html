@@ -3,6 +3,33 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block content %}
-<h1>Welcome, {{ request.user.username }}</h1>
-<p class="text-muted">This is your dashboard page. You can add more features here as needed.</p>
+<h1 class="text-center">Welcome, {{ user.username }}</h1>
+<div class="text-center mt-4">
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#quizModal">Take a Quiz</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="quizModal" tabindex="-1" aria-labelledby="quizModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="quizModalLabel">Choose a Topic</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="quizForm">
+          <div class="mb-3">
+            <label for="topic" class="form-label">Select Topic</label>
+            <select id="topic" class="form-select" required>
+              <option value="">Select a topic</option>
+              <option value="python_for_beginners">Python for Beginners</option>
+            </select>
+          </div>
+          <button type="button" id="startQuiz" class="btn btn-success w-100" disabled>Start Quiz</button>
+          <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

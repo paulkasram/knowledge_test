@@ -81,3 +81,8 @@ def logout(request):
     auth_logout(request)
     return redirect('home')
 
+
+
+def quiz(request, topic):
+    # For now, just render a template for the chosen topic
+    return render(request, 'users/quiz.html', {'topic': topic})

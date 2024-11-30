@@ -1,0 +1,14 @@
+{% extends "users/base.html" %}
+
+{% block title %}Quiz: {{ topic|title }}{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Quiz: {{ topic|title }}</h1>
+<div class="container mt-4">
+    <p>This is a quiz on the topic: {{ topic|title }}.</p>
+    <!-- Here, we'll show the questions once they are implemented. -->
+    <div class="text-center">
+        <button class="btn btn-primary">Submit Quiz</button>
+    </div>
+</div>
+{% endblock %}
